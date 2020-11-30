@@ -4,6 +4,8 @@
   * [Terms](#terms)
     + [Images](#images)
     + [Containers](#containers)
+  * [Containers vs Virtual Machines](#comparing-containers-and-virtual-machines)
+  #### Example App
   * [Usage](#usage)
     + [Development](#development)
     + [Production](#production)
@@ -11,9 +13,12 @@
     + [Dockerfile](#dockerfile)
     + [Docker Compose](#docker-compose)
 
+
+
 ## Terms
 
-Credit: https://docs.docker.com/get-started/overview/
+###### Credit: https://docs.docker.com/get-started/overview
+
 ### Images
 An image is a read-only template with instructions for creating a Docker container. Often, an image is based on another image, with some additional customization. For example, you may build an image which is based on the ubuntu image, but installs the Apache web server and your application, as well as the configuration details needed to make your application run.
 
@@ -27,6 +32,18 @@ By default, a container is relatively well isolated from other containers and it
 A container is defined by its image as well as any configuration options you provide to it when you create or start it. When a container is removed, any changes to its state that are not stored in persistent storage disappear.
 
 ---
+
+
+# Comparing Containers and Virtual Machines
+
+###### Credit: https://www.docker.com/resources/what-container
+
+Containers and virtual machines have similar resource isolation and allocation benefits, but function differently because containers virtualize the operating system instead of hardware. Containers are more portable and efficient.
+
+Containers | Virtual Machines
+--- | --- 
+Containers are an abstraction at the app layer that packages code and dependencies together. Multiple containers can run on the same machine and share the OS kernel with other containers, each running as isolated processes in user space. Containers take up less space than VMs (container images are typically tens of MBs in size), can handle more applications and require fewer VMs and Operating systems. | Virtual machines (VMs) are an abstraction of physical hardware turning one server into many servers. The hypervisor allows multiple VMs to run on a single machine. Each VM includes a full copy of an operating system, the application, necessary binaries and libraries - taking up tens of GBs. VMs can also be slow to boot.
+<img src="https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-appliction-blue-border_2.png" /> | <img src="https://www.docker.com/sites/default/files/d8/2018-11/container-vm-whatcontainer_2.png">
 # Usage
 ### Developemnt
 
